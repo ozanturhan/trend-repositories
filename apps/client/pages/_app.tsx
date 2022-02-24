@@ -1,6 +1,10 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import { ThemeProvider } from 'styled-components';
 import './styles.css';
+import { theme } from '@trend-repositories/ui';
+import { ApolloProvider } from '@apollo/client';
+import { client } from '../lib/apollo-client';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
@@ -8,9 +12,14 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Welcome to client!</title>
       </Head>
-      <main className="app">
-        <Component {...pageProps} />
-      </main>
+      <ThemeProvider theme={theme}>
+        <ApolloProvider client={client}>
+          <main className="app">
+            <Component {...pageProps} />
+          </main>
+        </ApolloProvider>
+        ,
+      </ThemeProvider>
     </>
   );
 }

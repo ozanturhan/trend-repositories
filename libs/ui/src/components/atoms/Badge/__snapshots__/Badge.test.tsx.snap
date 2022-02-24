@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge Component should be rendered correctly 1`] = `
+<DocumentFragment>
+  <a
+    class="style__StyledLink-ikww7b-0 fUma-dV style__StyledBadge-o2pv9p-0 klpobS"
+    href="https://github.com"
+  >
+    linguistic
+  </a>
+</DocumentFragment>
+`;

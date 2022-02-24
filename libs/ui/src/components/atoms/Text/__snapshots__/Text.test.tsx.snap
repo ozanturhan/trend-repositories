@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text Component should be rendered as a paragraph 1`] = `
+<DocumentFragment>
+  <p
+    class="style__StyledText-sc-1aawx67-0 kEyWhB"
+  >
+    linguistic
+  </p>
+</DocumentFragment>
+`;
+
+exports[`Text Component should be rendered correctly 1`] = `
+<DocumentFragment>
+  <span
+    class="style__StyledText-sc-1aawx67-0 kEyWhB"
+  >
+    linguistic
+  </span>
+</DocumentFragment>
+`;

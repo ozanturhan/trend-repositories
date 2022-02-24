@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading Component should be rendered correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="style__StyledLoading-sc-131w25h-0 hFAxFx"
+  >
+    <span
+      class="style__StyledText-sc-1aawx67-0 iWiWeI"
+    >
+      Loading...
+    </span>
+  </div>
+</DocumentFragment>
+`;

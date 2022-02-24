@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Language Component should be rendered correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="style__StyledLanguage-x0ke4t-0 fRquPl"
+  >
+    <div
+      class="style__LanguageColor-x0ke4t-1 bXOzcH"
+      color="yellow"
+    />
+    <span
+      class="style__StyledText-sc-1aawx67-0 kEyWhB"
+    >
+      Javascript
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Language Component should be rendered without color 1`] = `
+<DocumentFragment>
+  <div
+    class="style__StyledLanguage-x0ke4t-0 fRquPl"
+  >
+    <span
+      class="style__StyledText-sc-1aawx67-0 kEyWhB"
+    >
+      Javascript
+    </span>
+  </div>
+</DocumentFragment>
+`;

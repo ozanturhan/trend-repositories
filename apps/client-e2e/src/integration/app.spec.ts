@@ -1,13 +1,63 @@
-import { getGreeting } from '../support/app.po';
+import {
+  getHeader,
+  getRepository,
+  getStarButton,
+  getStarFilterButton,
+  nextPage,
+  previousPage,
+  selectDate,
+  selectLanguage,
+} from '../support/app.po';
 
 describe('client', () => {
-  beforeEach(() => cy.visit('/'));
+  beforeEach(() => {
+    cy.visit('/');
+    cy.intercept({
+      method: 'POST',
+      url: '/graphql',
+    }).as('graphql');
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(5 * 1000);
+  });
 
-  it('should display welcome message', () => {
-    // Custom command example, see `../support/commands.ts` file
-    cy.login('my-email@something.com', 'myPassword');
+  it('should display application name', () => {
+    getHeader().contains('GitHub Trend Repositories');
+  });
 
-    // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome client');
+  it('should filter repositories by language ', () => {
+    const languages = selectLanguage();
+    languages.select('PHP').should('have.value', 'PHP');
+    cy.wait('@graphql');
+  });
+
+  it('should filter repositories by date ', () => {
+    const languages = selectDate();
+    languages.select('Last month').should('have.value', 'last_month');
+    cy.wait('@graphql');
+  });
+
+  it('should visit next and prev page ', () => {
+    const next = nextPage();
+
+    next.trigger('click');
+    cy.wait('@graphql');
+    cy.wait(5 * 1000);
+
+    const prev = previousPage();
+    prev.trigger('click');
+  });
+
+  it('should add a repository to favorites and visit favorites ', () => {
+    const starButton = getStarButton();
+
+    starButton.first().trigger('click');
+
+    const starFilter = getStarFilterButton();
+
+    starFilter.trigger('click');
+
+    const repository = getRepository();
+
+    expect(repository).exist;
   });
 });

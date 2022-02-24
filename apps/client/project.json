@@ -15,11 +15,19 @@
         "production": {}
       }
     },
+    "serve-e2e": {
+      "builder": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx serve bff","nx e2e client-e2e"],
+        "parallel": true
+      }
+    },
     "serve": {
       "executor": "@nrwl/next:server",
       "options": {
         "buildTarget": "client:build",
-        "dev": true
+        "dev": true,
+        "proxyConfig": "apps/client/proxy.conf.json"
       },
       "configurations": {
         "production": {

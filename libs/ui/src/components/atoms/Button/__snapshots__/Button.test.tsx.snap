@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Component should be rendered correctly 1`] = `
+<DocumentFragment>
+  <a
+    class="style__StyledLink-ikww7b-0 fUma-dV style__StyledButton-gn6n84-0 eAVKfN"
+    href="https://github.com"
+  >
+    linguistic
+  </a>
+</DocumentFragment>
+`;

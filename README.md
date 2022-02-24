@@ -1,94 +1,59 @@
-
-
 # TrendRepositories
 
-This project was generated using [Nx](https://nx.dev).
+This repository includes 3 apps and 2 libs. This project created by [NX](https://nx.dev/) build system.
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+### Apps
 
-🔎 **Smart, Fast and Extensible Build System**
+- Bff 
+  - GraphQL
+  - Apollo Server
+- Client
+  - Next.js
+  - Apollo Client
+- Client e2e
+  - Cypress
 
-## Adding capabilities to your workspace
+### Libs
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+- api-interface
+- ui
+  - styled-components
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+## Installation
 
-Below are our core plugins:
+```bash
+$ npm install
+```
 
-- [React](https://reactjs.org)
-  - `npm install --save-dev @nrwl/react`
-- Web (no framework frontends)
-  - `npm install --save-dev @nrwl/web`
-- [Angular](https://angular.io)
-  - `npm install --save-dev @nrwl/angular`
-- [Nest](https://nestjs.com)
-  - `npm install --save-dev @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `npm install --save-dev @nrwl/express`
-- [Node](https://nodejs.org)
-  - `npm install --save-dev @nrwl/node`
-
-There are also many [community plugins](https://nx.dev/community) you could add.
-
-## Generate an application
-
-Run `nx g @nrwl/react:app my-app` to generate an application.
-
-> You can use any of the plugins above to generate applications as well.
-
-When using Nx, you can create multiple applications and libraries in the same workspace.
-
-## Generate a library
-
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
-
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are shareable across libraries and applications. They can be imported from `@trend-repositories/mylib`.
-
-## Development server
-
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
+## Development
+```bash
+$ npm run start # start bff and client
+$ npm run start:bff
+$ npm run start:client
+```
 
 ## Build
+```bash
+$ npm run build # build bff and
+$ npm run build:bff
+$ npm run build:client
+```
 
-Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Tests
+```sh
+$ npm run test # run all project tests with coverage
+$ npm run test:ui
+$ npm run test:ui:coverage
+$ npm run test:client
+$ npm run test:client:coverage
+$ npm run test:bff
+$ npm run test:bff:coverage
+```
 
-## Running unit tests
+## e2e Test
+```sh
+$ npm run e2e
+$ npm run e2e:watch
+```
 
-Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `nx e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
-
-## ☁ Nx Cloud
-
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+I didn't write tests for all cases. I aimed to show you my test writing ability. 
