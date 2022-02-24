@@ -1,6 +1,6 @@
 # TrendRepositories
 
-This repository includes 3 apps and 2 libs. This project created by [NX](https://nx.dev/) build system.
+This repository includes 3 apps and 2 libs. This project created by using [NX](https://nx.dev/) build system.
 
 ### Apps
 
