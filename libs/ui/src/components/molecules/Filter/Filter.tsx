@@ -4,7 +4,11 @@ import { FC, SyntheticEvent } from 'react';
 import { useRouter } from 'next/router';
 import { Language } from '@trend-repositories/api-interfaces';
 
-const Filter: FC<{ languages: Language[] }> = ({ languages }) => {
+interface FilterProps {
+  languages: Language[];
+}
+
+const Filter: FC<FilterProps> = ({ languages }) => {
   const router = useRouter();
   const { filter, language, date } = router.query;
 
@@ -49,6 +53,7 @@ const Filter: FC<{ languages: Language[] }> = ({ languages }) => {
       <SelectContainer>
         <select
           data-cy="language-selection"
+          aria-label="language-selection"
           onChange={handleLanguageChange}
           value={language}
         >
@@ -62,6 +67,7 @@ const Filter: FC<{ languages: Language[] }> = ({ languages }) => {
 
         <select
           data-cy="date-selection"
+          aria-label="date-selection"
           onChange={handleDateChange}
           value={date}
         >

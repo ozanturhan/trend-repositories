@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { ThemeProvider } from 'styled-components';
 import theme from '../theme';
 import { ReactNode } from 'react';
@@ -22,6 +23,10 @@ export const renderWithMockProvider = (
       </MockedProvider>
     </ThemeProvider>
   );
+};
+
+export const renderWithThemeProvider = (node: ReactNode) => {
+  return render(<ThemeProvider theme={theme}>{node}</ThemeProvider>);
 };
 
 export const waitForResponse = async () =>

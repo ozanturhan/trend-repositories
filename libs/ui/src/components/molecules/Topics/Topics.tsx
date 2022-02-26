@@ -3,7 +3,9 @@ import { Badge } from '../../atoms';
 import { FC } from 'react';
 import { GithubRepository } from '@trend-repositories/api-interfaces';
 
-const Topics: FC<Pick<GithubRepository, 'topics'>> = ({ topics }) => {
+type TopicsProps = Pick<GithubRepository, 'topics'>;
+
+const Topics: FC<TopicsProps> = ({ topics }) => {
   return (
     <StyledTopics>
       {topics?.map((topic) => (

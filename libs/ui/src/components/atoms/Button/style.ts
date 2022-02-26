@@ -4,18 +4,14 @@ import { LinkProps } from 'next/link';
 import { FC } from 'react';
 import theme from '../../../theme';
 
-export const StyledButton: FC<
-  Partial<LinkProps> & {
-    active?: boolean;
-    onClick?: () => void;
-    color?: keyof typeof theme.colors;
-    disabled?: boolean;
-  }
-> = styled(Link)<{
+export type ButtonProps = Partial<LinkProps> & {
   active?: boolean;
-  color?: keyof typeof theme.colors;
+  onClick?: () => void;
+  color?: keyof typeof theme.colors | undefined;
   disabled?: boolean;
-}>`
+};
+
+export const StyledButton: FC<ButtonProps> = styled(Link)<ButtonProps>`
   background-color: ${(props) => props.theme.colors.black_2};
   display: inline-flex;
   align-items: center;

@@ -59,6 +59,7 @@ exports[`Index should render successfully 1`] = `
           class="style__SelectContainer-sc-1pyayj-2 krVnKA"
         >
           <select
+            aria-label="language-selection"
             data-cy="language-selection"
           >
             <option
@@ -78,6 +79,7 @@ exports[`Index should render successfully 1`] = `
             </option>
           </select>
           <select
+            aria-label="date-selection"
             data-cy="date-selection"
           >
             <option

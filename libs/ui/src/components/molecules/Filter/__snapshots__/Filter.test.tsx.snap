@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter Component Test should be rendered correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="style__StyledFilter-sc-1pyayj-0 jgBNJY"
+  >
+    <div
+      class="style__ButtonContainer-sc-1pyayj-1 iqZZMY"
+    >
+      <a
+        class="style__StyledLink-ikww7b-0 fUma-dV style__StyledButton-gn6n84-0 fyOAYP"
+        href="/?filter=all"
+      >
+        Repositories
+      </a>
+      <a
+        class="style__StyledLink-ikww7b-0 fUma-dV style__StyledButton-gn6n84-0 eAVKfN"
+        data-cy="filter-star"
+        href="/?filter=star"
+      >
+        Favorite Repositories
+      </a>
+    </div>
+    <div
+      class="style__SelectContainer-sc-1pyayj-2 krVnKA"
+    >
+      <select
+        aria-label="language-selection"
+        data-cy="language-selection"
+      >
+        <option
+          value="all"
+        >
+          All Language
+        </option>
+        <option
+          value="Javascript"
+        >
+          Javascript
+        </option>
+        <option
+          value="PHP"
+        >
+          PHP
+        </option>
+      </select>
+      <select
+        aria-label="date-selection"
+        data-cy="date-selection"
+      >
+        <option
+          hidden=""
+        >
+          Date Range
+        </option>
+        <option
+          value="today"
+        >
+          Today
+        </option>
+        <option
+          value="last_week"
+        >
+          Last week
+        </option>
+        <option
+          value="last_month"
+        >
+          Last month
+        </option>
+      </select>
+    </div>
+  </div>
+</DocumentFragment>
+`;

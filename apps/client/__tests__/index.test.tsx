@@ -65,6 +65,7 @@ const repositoryMock = {
     },
   },
 };
+
 describe('Index', () => {
   beforeEach(() => {
     cache.restore({});

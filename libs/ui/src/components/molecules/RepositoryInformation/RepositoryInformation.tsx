@@ -3,18 +3,20 @@ import { Info, StyledRepositoryInformatin } from './style';
 import { FC } from 'react';
 import { GithubRepository } from '@trend-repositories/api-interfaces';
 
-const RepositoryInformation: FC<
-  Pick<
-    GithubRepository,
-    | 'name'
-    | 'stars'
-    | 'license'
-    | 'language'
-    | 'languageColor'
-    | 'forks'
-    | 'url'
-  >
-> = ({ url, stars, license, languageColor, forks, language, name }) => {
+type RepositoryInformationProps = Pick<
+  GithubRepository,
+  'name' | 'stars' | 'license' | 'language' | 'languageColor' | 'forks' | 'url'
+>;
+
+const RepositoryInformation: FC<RepositoryInformationProps> = ({
+  url,
+  stars,
+  license,
+  languageColor,
+  forks,
+  language,
+  name,
+}) => {
   return (
     <StyledRepositoryInformatin>
       {language && <Language color={languageColor}>{language}</Language>}
