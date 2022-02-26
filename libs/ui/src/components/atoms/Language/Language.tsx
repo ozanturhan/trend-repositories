@@ -1,4 +1,4 @@
-import { Text } from '../../atoms';
+import { Text } from '../Text';
 import { LanguageColor, StyledLanguage } from './style';
 import { FC } from 'react';
 

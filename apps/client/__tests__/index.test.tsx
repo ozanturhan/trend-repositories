@@ -4,11 +4,11 @@ import {
   waitForResponse,
   screen,
   fireEvent,
-} from '@trend-repositories/ui/utils';
+} from '@ui/utils';
 
 import Index from '../pages/index';
-import { GET_LANGUAGES, GET_TREND_REPOSITORIES } from '../graphql';
-import { cache } from '../lib/apollo-client';
+import { GET_LANGUAGES, GET_TREND_REPOSITORIES } from '@app/graphql';
+import { cache } from '@app/lib';
 
 jest.mock('next/dist/client/router', () => require('next-router-mock'));
 const languageMock = {

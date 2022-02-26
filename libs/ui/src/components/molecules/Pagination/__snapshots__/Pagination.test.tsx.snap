@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RepositoryInformation Component Test should be rendered correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="style__StyledPagination-sc-7mqc4q-0 loZPVd"
+  >
+    <a
+      class="style__StyledLink-ikww7b-0 fUma-dV style__StyledButton-gn6n84-0 ljPxBu"
+      data-cy="previous-page"
+      disabled=""
+      href="/?page=1"
+    >
+      &lt; Prev
+    </a>
+    <a
+      class="style__StyledLink-ikww7b-0 fUma-dV style__StyledButton-gn6n84-0 eAVKfN"
+      data-cy="next-page"
+      href="/?page=2"
+    >
+      Next &gt;
+    </a>
+  </div>
+</DocumentFragment>
+`;

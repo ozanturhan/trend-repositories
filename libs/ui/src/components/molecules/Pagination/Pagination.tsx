@@ -1,9 +1,13 @@
+import { Button } from '@ui/atoms';
 import { StyledPagination } from './style';
-import { Button } from '../../atoms';
 import { useRouter } from 'next/router';
 import { FC, useEffect, useState } from 'react';
 
-const Pagination: FC<{ total: number }> = ({ total }) => {
+interface PaginationProps {
+  total: number;
+}
+
+const Pagination: FC<PaginationProps> = ({ total }) => {
   const router = useRouter();
 
   const [page, setPage] = useState(1);

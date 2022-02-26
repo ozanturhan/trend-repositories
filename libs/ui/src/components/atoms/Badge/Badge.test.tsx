@@ -1,4 +1,4 @@
-import { renderWithProvider } from '@trend-repositories/ui/utils';
+import { renderWithProvider } from '@ui/utils';
 import Badge from './Badge';
 
 describe('Badge Component', () => {

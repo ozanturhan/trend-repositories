@@ -1,6 +1,6 @@
 import singletonRouter from 'next/router';
 import mockRouter from 'next-router-mock';
-import { renderWithThemeProvider, screen, fireEvent } from '../../../utils';
+import { renderWithThemeProvider, screen, fireEvent } from '@ui/utils';
 import Filter from './Filter';
 
 jest.mock('next/dist/client/router', () => require('next-router-mock'));

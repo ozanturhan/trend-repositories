@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client';
 import {
   GET_FAVORITE_REPOSITORIES,
   GET_TREND_REPOSITORIES,
-} from '../../graphql';
+} from '@app/graphql';
 import { useEffect, useState } from 'react';
 
 export const useGetRepositories = () => {

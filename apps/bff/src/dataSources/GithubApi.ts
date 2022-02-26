@@ -16,7 +16,8 @@ export class GithubApi extends RESTDataSource {
   ): Promise<GithubRepositoryResponse> {
     return this.get(
       'search/repositories',
-      request as unknown as URLSearchParams
+      request as unknown as URLSearchParams,
+      { headers: { Accept: 'application/vnd.github.v3+json' } }
     );
   }
 }

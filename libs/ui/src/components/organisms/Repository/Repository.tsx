@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { GithubRepository } from '@trend-repositories/api-interfaces';
-import { Button, Icon, Link, Text } from '../../atoms';
-import { RepositoryInformation, Topics } from '../../molecules';
+import { Button, Icon, Link, Text } from '@ui/atoms';
+import { RepositoryInformation, Topics } from '@ui/molecules';
 import { RepositoryTitleContainer, StyledRepository } from './style';
 
 const Repository: FC<GithubRepository & { onStar: () => void }> = ({
@@ -23,6 +23,7 @@ const Repository: FC<GithubRepository & { onStar: () => void }> = ({
         <Link href={url}>{name}</Link>
         <Button
           data-cy="star-button"
+          data-testid="star-button"
           onClick={onStar}
           color={isStarred ? 'blue_2' : undefined}
         >

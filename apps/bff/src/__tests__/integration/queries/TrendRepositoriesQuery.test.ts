@@ -33,6 +33,16 @@ describe('[Query - TrendRepositories]', () => {
     Language: new Language(),
   };
 
+  (dataSources.GithubApi as any).get = jest.fn(() =>
+    Promise.resolve(repositoriesMock)
+  );
+
+  (dataSources.Language as any).get = jest.fn(() =>
+    Promise.resolve(languagesMock)
+  );
+
+  (Date.now as unknown) = jest.fn(() => new Date('2022-02-20T12:33:37.000Z'));
+
   beforeEach(() => {
     initCache();
     server = new ApolloServer({
@@ -44,11 +54,7 @@ describe('[Query - TrendRepositories]', () => {
 
   it('should fetch repositories with default parameters', async () => {
     // Arrange
-    const { GithubApi, Language } = dataSources;
-
-    (GithubApi as any).get = jest.fn(() => Promise.resolve(repositoriesMock));
-
-    (Language as any).get = jest.fn(() => Promise.resolve(languagesMock));
+    const { GithubApi } = dataSources;
 
     // Act
     const response = await server.executeOperation({
@@ -56,12 +62,16 @@ describe('[Query - TrendRepositories]', () => {
     });
 
     // Assertion
-    expect((GithubApi as any).get).toHaveBeenCalledWith('search/repositories', {
-      page: 1,
-      per_page: 20,
-      q: 'created:>=2022-02-20',
-      sort: 'star',
-    });
+    expect((GithubApi as any).get).toHaveBeenCalledWith(
+      'search/repositories',
+      {
+        page: 1,
+        per_page: 20,
+        q: 'created:>=2022-02-13',
+        sort: 'star',
+      },
+      { headers: { Accept: 'application/vnd.github.v3+json' } }
+    );
 
     expect(response?.data).toEqual({
       TrendRepositories: {
@@ -98,11 +108,7 @@ describe('[Query - TrendRepositories]', () => {
 
   it('should fetch repositories with variables', async () => {
     // Arrange
-    const { GithubApi, Language } = dataSources;
-
-    (GithubApi as any).get = jest.fn(() => Promise.resolve(repositoriesMock));
-
-    (Language as any).get = jest.fn(() => Promise.resolve(languagesMock));
+    const { GithubApi } = dataSources;
 
     // Act
     await server.executeOperation({
@@ -118,11 +124,81 @@ describe('[Query - TrendRepositories]', () => {
     });
 
     // Assertion
-    expect((GithubApi as any).get).toHaveBeenCalledWith('search/repositories', {
-      page: 1,
-      per_page: 30,
-      q: 'created:>=2022-02-20 language:PHP',
-      sort: 'name',
+    expect((GithubApi as any).get).toHaveBeenCalledWith(
+      'search/repositories',
+      {
+        page: 1,
+        per_page: 30,
+        q: 'created:>=2022-02-13 language:PHP',
+        sort: 'name',
+      },
+      { headers: { Accept: 'application/vnd.github.v3+json' } }
+    );
+  });
+
+  describe('[filter by date]', () => {
+    const executeOperationWithDate = async (date) =>
+      await server.executeOperation({
+        query: QUERY,
+        variables: {
+          params: {
+            page: 1,
+            limit: 30,
+            sort: 'name',
+            date: date,
+          },
+        },
+      });
+
+    it('today', async () => {
+      // Arrange
+      const { GithubApi } = dataSources;
+
+      // Act
+      await executeOperationWithDate('today');
+
+      // Assertion
+      expect((GithubApi as any).get).toHaveBeenCalledWith(
+        expect.anything(),
+        expect.objectContaining({
+          q: 'created:>=2022-02-19',
+        }),
+        expect.anything()
+      );
+    });
+
+    it('last week', async () => {
+      // Arrange
+      const { GithubApi } = dataSources;
+
+      // Act
+      await executeOperationWithDate('last_week');
+
+      // Assertion
+      expect((GithubApi as any).get).toHaveBeenCalledWith(
+        expect.anything(),
+        expect.objectContaining({
+          q: 'created:>=2022-02-13',
+        }),
+        expect.anything()
+      );
+    });
+
+    it('last month', async () => {
+      // Arrange
+      const { GithubApi } = dataSources;
+
+      // Act
+      await executeOperationWithDate('last_month');
+
+      // Assertion
+      expect((GithubApi as any).get).toHaveBeenCalledWith(
+        expect.anything(),
+        expect.objectContaining({
+          q: 'created:>=2022-01-21',
+        }),
+        expect.anything()
+      );
     });
   });
 });

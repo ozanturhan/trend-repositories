@@ -1,4 +1,4 @@
-import { renderWithProvider } from '@trend-repositories/ui/utils';
+import { renderWithProvider } from '@ui/utils';
 import Icon from './Icon';
 
 describe('Icon Component', () => {

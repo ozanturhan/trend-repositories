@@ -1,6 +1,6 @@
-import { Button } from '../../atoms';
-import { ButtonContainer, SelectContainer, StyledFilter } from './style';
 import { FC, SyntheticEvent } from 'react';
+import { Button } from '@ui/atoms';
+import { ButtonContainer, SelectContainer, StyledFilter } from './style';
 import { useRouter } from 'next/router';
 import { Language } from '@trend-repositories/api-interfaces';
 

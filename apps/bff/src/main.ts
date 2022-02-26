@@ -6,7 +6,7 @@ import responseCachePlugin from 'apollo-server-plugin-response-cache';
 import schema from './schema';
 import dataSources from './dataSources';
 import { initCache } from './utils/cache';
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+//process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 async function startApolloServer() {
   const app = express();
   const server = new ApolloServer({

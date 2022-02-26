@@ -1,2 +1,2 @@
-export * from './queries/useGetRepositories';
+export * from './queries';
 export * from './mutations';

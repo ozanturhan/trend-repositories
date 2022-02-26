@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import { GET_LANGUAGES } from '../../graphql';
+import { GET_LANGUAGES } from '@app/graphql';
 import { Language } from '@trend-repositories/api-interfaces';
 
 export const useGetLanguages = () => {

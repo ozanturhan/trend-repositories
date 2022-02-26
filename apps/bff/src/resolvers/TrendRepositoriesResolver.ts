@@ -19,14 +19,14 @@ class TrendRepositoriesResolver {
     let date;
     switch (params?.date) {
       case 'today':
-        date = moment().format('YYYY-MM-DD');
+        date = moment().subtract(1, 'd').format('YYYY-MM-DD');
         break;
       case 'last_month':
-        date = moment().startOf('month').format('YYYY-MM-DD');
+        date = moment().subtract(30, 'd').format('YYYY-MM-DD');
         break;
       case 'last_week':
       default:
-        date = moment().startOf('week').format('YYYY-MM-DD');
+        date = moment().subtract(7, 'd').format('YYYY-MM-DD');
     }
 
     const q = [`created:>=${date}`];
@@ -37,6 +37,7 @@ class TrendRepositoriesResolver {
 
     request.q = q.join(' ');
 
+    console.log({ date: params?.date }, Date.now(), date);
     return dataSources.GithubApi.searchRepositories(request).then(
       (response) => {
         const items = response.items.map((repository) => ({

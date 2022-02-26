@@ -1,5 +1,5 @@
 import Link from './Link';
-import { renderWithProvider } from '@trend-repositories/ui/utils';
+import { renderWithProvider } from '@ui/utils';
 import { fireEvent, screen } from '@testing-library/react';
 
 describe('Link Component', () => {

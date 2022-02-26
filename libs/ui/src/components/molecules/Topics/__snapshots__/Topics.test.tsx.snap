@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Topics Component Test should be rendered correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="style__StyledTopics-sc-19kmfo9-0 jwmWIf"
+  >
+    <a
+      class="style__StyledLink-ikww7b-0 fUma-dV style__StyledBadge-o2pv9p-0 klpobS"
+      href="https://github.com/search?q=topic:topic1&type=Repositories"
+    >
+      topic1
+    </a>
+    <a
+      class="style__StyledLink-ikww7b-0 fUma-dV style__StyledBadge-o2pv9p-0 klpobS"
+      href="https://github.com/search?q=topic:topic2&type=Repositories"
+    >
+      topic2
+    </a>
+  </div>
+</DocumentFragment>
+`;

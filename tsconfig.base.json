@@ -19,7 +19,12 @@
         "libs/api-interfaces/src/index.ts"
       ],
       "@trend-repositories/ui": ["libs/ui/src/index.ts"],
-      "@trend-repositories/ui/utils": ["libs/ui/src/utils"]
+      "@ui/utils": ["libs/ui/src/utils"],
+      "@ui/atoms": ["libs/ui/src/components/atoms"],
+      "@ui/molecules": ["libs/ui/src/components/molecules"],
+      "@app/operations": ["apps/client/operations"],
+      "@app/graphql": ["apps/client/graphql"],
+      "@app/lib": ["apps/client/lib"]
     }
   },
   "exclude": ["node_modules", "tmp"]

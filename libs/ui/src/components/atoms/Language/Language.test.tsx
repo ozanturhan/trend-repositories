@@ -1,4 +1,4 @@
-import { renderWithProvider } from '@trend-repositories/ui/utils';
+import { renderWithProvider } from '@ui/utils';
 import Language from './Language';
 
 describe('Language Component', () => {

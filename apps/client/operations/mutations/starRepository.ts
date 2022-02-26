@@ -1,6 +1,6 @@
 import { gql, ReactiveVar } from '@apollo/client';
 import { GithubRepository } from '@trend-repositories/api-interfaces';
-import { cache } from '../../lib/apollo-client';
+import { cache } from '@app/lib';
 
 export default function createStarRepository(
   favoriteRepositoriesVar: ReactiveVar<GithubRepository[]>

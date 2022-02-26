@@ -1,6 +1,6 @@
-import { StyledTopics } from './style';
-import { Badge } from '../../atoms';
 import { FC } from 'react';
+import { Badge } from '@ui/atoms';
+import { StyledTopics } from './style';
 import { GithubRepository } from '@trend-repositories/api-interfaces';
 
 type TopicsProps = Pick<GithubRepository, 'topics'>;

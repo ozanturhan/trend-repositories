@@ -5,8 +5,11 @@ import {
   Pagination,
   Repository,
 } from '@trend-repositories/ui';
-import { Mutations, useGetRepositories } from '../operations';
-import { useGetLanguages } from '../operations/queries/useGetLanguages';
+import {
+  Mutations,
+  useGetRepositories,
+  useGetLanguages,
+} from '@app/operations';
 
 export function Index() {
   const { response, loading, filter } = useGetRepositories();

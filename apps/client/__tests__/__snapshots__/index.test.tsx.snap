@@ -121,6 +121,7 @@ exports[`Index should render successfully 1`] = `
           <a
             class="style__StyledLink-ikww7b-0 fUma-dV style__StyledButton-gn6n84-0 eAVKfN"
             data-cy="star-button"
+            data-testid="star-button"
           >
             <svg
               aria-hidden="true"
@@ -201,6 +202,7 @@ exports[`Index should render successfully 1`] = `
           >
             <a
               class="style__StyledLink-ikww7b-0 fUma-dV"
+              data-testid="stargazers-url"
               href="https://github.com/dtm-php/dtm-client/stargazers"
             >
               <svg
@@ -228,6 +230,7 @@ exports[`Index should render successfully 1`] = `
           >
             <a
               class="style__StyledLink-ikww7b-0 fUma-dV"
+              data-testid="forks-url"
               href="https://github.com/dtm-php/dtm-client/network/members.dtm-client"
             >
               <svg

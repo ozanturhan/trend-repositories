@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { StyledLink } from './style';
 import { default as NextLink, LinkProps as NextLinkProps } from 'next/link';
+import { StyledLink } from './style';
 
 type LinkProps = Partial<NextLinkProps> & {
   className?: string;
