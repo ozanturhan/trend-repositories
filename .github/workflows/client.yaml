@@ -1,18 +1,15 @@
-name: Deploy to Heroku (BFF)
-
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - ".github/workflows/client.yml"
+name: deploy-client
+on: push
 
 jobs:
-  deploy:
+  heroku-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Add backend remote origin
-        run: git remote add heroku-backend https://heroku:${{ secrets.HEROKU_API_TOKEN }}@git.heroku.com/${{ secrets.HEROKU_CLIENT_APP_NAME }}.git
-      - name: Deploy bff to Heroku
-        run: git push heroku-backend `git subtree split --prefix backend master`:refs/heads/master --force
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - name: Deploy to Heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_CLIENT_APP_NAME }}
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
