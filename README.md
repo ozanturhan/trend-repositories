@@ -64,6 +64,6 @@ I didn't write tests for all cases. I aimed to show you my test writing ability.
 $ heroku buildpacks:add -a trend-repositories-client heroku-community/multi-procfile
 $ heroku buildpacks:add -a trend-repositories-backend heroku-community/multi-procfile
 
-$ heroku config:set -a trend-repositories-client PROCFILE=./Procfile.client   
-$ heroku config:set -a trend-repositories-backend PROCFILE=./Procfile.bff   
+$ heroku config:set -a trend-repositories-client PROCFILE=Procfile.client   
+$ heroku config:set -a trend-repositories-backend PROCFILE=Procfile.bff   
 ```
