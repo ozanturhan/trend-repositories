@@ -12,5 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Add backend remote origin
         run: git remote add heroku-bff https://heroku:${{ secrets.HEROKU_API_TOKEN }}@git.heroku.com/${{ secrets.HEROKU_BFF_APP_NAME }}.git
+      - name: Fetch all
+        run: git fetch --all --unshallow
       - name: Deploy bff to Heroku
-        run: git push heroku-bff HEAD:master --force
+        run: git push heroku-bff HEAD:master
