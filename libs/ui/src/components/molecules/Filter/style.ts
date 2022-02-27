@@ -7,6 +7,9 @@ export const StyledFilter = styled.div`
   background-color: ${(props) => props.theme.colors.black_2};
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 
   @media only screen and (max-width: 600px) {
     flex-direction: column;
