@@ -7,6 +7,15 @@ export const StyledFilter = styled.div`
   background-color: ${(props) => props.theme.colors.black_2};
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+
+    > div:first-child {
+      margin-bottom: 9px;
+    }
+  }
 `;
 
 export const ButtonContainer = styled.div`
@@ -29,6 +38,7 @@ export const ButtonContainer = styled.div`
 
 export const SelectContainer = styled.div`
   display: flex;
+  align-items: center;
 
   select {
     background-color: ${(props) => props.theme.colors.grey_2};
