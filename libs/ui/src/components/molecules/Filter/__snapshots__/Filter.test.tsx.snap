@@ -3,7 +3,7 @@
 exports[`Filter Component Test should be rendered correctly 1`] = `
 <DocumentFragment>
   <div
-    class="style__StyledFilter-sc-1pyayj-0 jgBNJY"
+    class="style__StyledFilter-sc-1pyayj-0 fQCbPz"
   >
     <div
       class="style__ButtonContainer-sc-1pyayj-1 iqZZMY"
@@ -23,7 +23,7 @@ exports[`Filter Component Test should be rendered correctly 1`] = `
       </a>
     </div>
     <div
-      class="style__SelectContainer-sc-1pyayj-2 krVnKA"
+      class="style__SelectContainer-sc-1pyayj-2 clhOTY"
     >
       <select
         aria-label="language-selection"

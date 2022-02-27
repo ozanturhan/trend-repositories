@@ -36,7 +36,7 @@ exports[`Index should render successfully 1`] = `
       class="style__Content-rek4sk-1 hSYkMu"
     >
       <div
-        class="style__StyledFilter-sc-1pyayj-0 jgBNJY"
+        class="style__StyledFilter-sc-1pyayj-0 fQCbPz"
       >
         <div
           class="style__ButtonContainer-sc-1pyayj-1 iqZZMY"
@@ -56,7 +56,7 @@ exports[`Index should render successfully 1`] = `
           </a>
         </div>
         <div
-          class="style__SelectContainer-sc-1pyayj-2 krVnKA"
+          class="style__SelectContainer-sc-1pyayj-2 clhOTY"
         >
           <select
             aria-label="language-selection"
