@@ -15,4 +15,4 @@ jobs:
       - name: Fetch all
         run: git fetch --all --unshallow
       - name: Deploy bff to Heroku
-        run: git push heroku-bff HEAD:master
+        run: git push heroku-bff main
