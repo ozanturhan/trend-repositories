@@ -17,7 +17,10 @@
     "test:ui": "nx test ui",
     "test:ui:coverage": "nx test ui --coverage",
     "e2e": "nx run client:serve-e2e",
-    "e2e:watch": "nx run client:serve-e2e open --watch"
+    "e2e:watch": "nx run client:serve-e2e open --watch",
+    "heroku-postbuild": "./heroku.build",
+    "start:client:production": "next start ./dist/apps/client -p $PORT",
+    "start:bff:production": " node ./dist/apps/bff/main.js"
   },
   "private": true,
   "dependencies": {

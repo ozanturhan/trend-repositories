@@ -4,12 +4,13 @@ const withNx = require('@nrwl/next/plugins/with-nx');
 /**
  * @type {import('@nrwl/next/plugins/with-nx').WithNxOptions}
  **/
+
 const nextConfig = {
   async rewrites() {
     return [
       {
         source: '/graphql',
-        destination: 'http://localhost:3333', // Matched parameters can be used in the destination
+        destination: process.env.BFF_URL, // Matched parameters can be used in the destination
       },
     ];
   },

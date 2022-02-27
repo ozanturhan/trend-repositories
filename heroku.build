@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+if [ "$BUILD_ENV" = "client" ]; then
+  npm run build:client
+elif [ "$BUILD_ENV" = "bff" ]; then
+  npm run build:bff
+else
+  echo "Error: no build config for BUILD_ENV value '$BUILD_ENV'"
+  exit 1
+fi

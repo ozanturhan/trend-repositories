@@ -7,6 +7,9 @@ import schema from './schema';
 import dataSources from './dataSources';
 import { initCache } from './utils/cache';
 //process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
+
+const PORT = process.env.PORT || 3333
 async function startApolloServer() {
   const app = express();
   const server = new ApolloServer({
@@ -20,9 +23,9 @@ async function startApolloServer() {
   await server.start();
   server.applyMiddleware({ app, path: '/' });
 
-  await new Promise<void>((resolve) => app.listen({ port: 3333 }, resolve));
+  await new Promise<void>((resolve) => app.listen({ port: PORT }, resolve));
 
-  console.log(`🚀 Server ready at http://localhost:3333${server.graphqlPath}`);
+  console.log(`🚀 Server ready at http://localhost:${PORT}${server.graphqlPath}`);
 }
 
 (async () => {
