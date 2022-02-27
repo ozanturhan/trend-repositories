@@ -2,6 +2,8 @@
 
 This repository includes 3 apps and 2 libs. This project created by using [NX](https://nx.dev/) build system.
 
+Heroku URL: https://trend-repositories-client.herokuapp.com/
+
 ### Apps
 
 - Bff 
