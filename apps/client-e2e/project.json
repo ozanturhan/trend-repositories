@@ -3,11 +3,26 @@
   "sourceRoot": "apps/client-e2e/src",
   "projectType": "application",
   "targets": {
+    "serve-all": {
+      "builder": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "nx serve bff"
+          },
+          {
+            "command": "nx serve client"
+          }
+        ],
+        "parallel": true,
+        "readyWhen": "[ ready ] on http://localhost:4200"
+      }
+    },
     "e2e": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
         "cypressConfig": "apps/client-e2e/cypress.json",
-        "devServerTarget": "client:serve"
+        "devServerTarget": "client-e2e:serve-all"
       },
       "configurations": {
         "production": {

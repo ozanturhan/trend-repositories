@@ -5,7 +5,8 @@
   "modifyObstructiveCode": false,
   "supportFile": "./src/support/index.ts",
   "pluginsFile": false,
-  "video": true,
+  "video": false,
+  "screenshotOnRunFailure": false,
   "videosFolder": "../../dist/cypress/apps/client-e2e/videos",
   "screenshotsFolder": "../../dist/cypress/apps/client-e2e/screenshots",
   "chromeWebSecurity": false

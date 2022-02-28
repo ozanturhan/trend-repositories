@@ -11,7 +11,7 @@ import {
 
 describe('client', () => {
   beforeEach(() => {
-    cy.visit('/');
+    cy.visit('http://localhost:4200/')
     cy.intercept({
       method: 'POST',
       url: '/graphql',
@@ -50,7 +50,7 @@ describe('client', () => {
   it('should add a repository to favorites and visit favorites ', () => {
     const starButton = getStarButton();
 
-    starButton.first().trigger('click');
+    starButton.first().trigger('click', { force: true });
 
     const starFilter = getStarFilterButton();
 
