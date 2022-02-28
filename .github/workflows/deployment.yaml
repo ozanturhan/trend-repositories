@@ -38,6 +38,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
+          config-file: apps/client-e2e/cypress.json
           start: npm run e2e
           
   deploy-bff:
