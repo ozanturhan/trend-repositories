@@ -9,7 +9,7 @@ import { initCache } from './utils/cache';
 //process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 
-const PORT = process.env.BFF_PORT || 3333
+const PORT = process.env.PORT || 3333
 async function startApolloServer() {
   const app = express();
   const server = new ApolloServer({
