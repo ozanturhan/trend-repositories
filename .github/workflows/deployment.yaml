@@ -24,6 +24,14 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+            
+      - name: Cache Cypress Binary
+        id: cache-cypress-binary
+        uses: actions/cache@v2
+        with:
+          path: cypress/cache
+          key: cypress-binary-${{ hashFiles('package-lock.json') }}
+
       - name: Install Dependencies
         if: steps.cache-nodemodules.outputs.cache-hit != 'true'
         run: npm ci
