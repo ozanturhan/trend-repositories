@@ -18,7 +18,7 @@ const typeDefs = /* GraphQL */ `
 
   type TrendRepositories {
     total: Int
-    items: [Repository]
+    items: [Repository] @cacheControl(inheritMaxAge: true)
   }
 
   type Repository {
