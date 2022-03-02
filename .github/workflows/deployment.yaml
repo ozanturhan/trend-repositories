@@ -33,6 +33,10 @@ jobs:
           key: cypress-binary-${{ hashFiles('package-lock.json') }}
 
       - name: Install Dependencies
+        if: steps.cache-cypress-binary.outputs.cache-hit != 'true'
+        run: cypress install
+        
+      - name: Install Dependencies
         if: steps.cache-nodemodules.outputs.cache-hit != 'true'
         run: npm ci
 
