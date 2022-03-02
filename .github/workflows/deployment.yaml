@@ -26,10 +26,10 @@ jobs:
             ${{ runner.os }}-
             
       - name: Cache Cypress Binary
-        id: cache-cypress-binary
+        id: cache-cypress-binary-v2
         uses: actions/cache@v2
         with:
-          path: cypress/cache
+          path: /home/runner/.cache/Cypress
           key: cypress-binary-${{ hashFiles('package-lock.json') }}
         
       - name: Install Dependencies
@@ -37,7 +37,7 @@ jobs:
         run: npm ci
         
       - name: Install Cypress
-        if: steps.cache-cypress-binary.outputs.cache-hit != 'true'
+        if: steps.cache-cypress-binary-v2.outputs.cache-hit != 'true'
         run: node_modules/cypress/bin/cypress install
 
       - name: Use Node.js
