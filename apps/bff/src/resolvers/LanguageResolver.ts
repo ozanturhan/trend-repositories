@@ -3,11 +3,13 @@ import * as yaml from 'yaml';
 import { Language } from '@trend-repositories/api-interfaces';
 
 class LanguageResolver {
+  // query resolver
   static async Languages(_, __, { dataSources }): Promise<Language[]> {
     const languages = await LanguageResolver.getLanguages(dataSources);
     return Object.values(languages);
   }
 
+  // field resolver
   static async LanguageColor(parent, _, { dataSources }): Promise<string> {
     const languages = await LanguageResolver.getLanguages(dataSources);
 

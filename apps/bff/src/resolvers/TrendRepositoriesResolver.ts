@@ -37,7 +37,6 @@ class TrendRepositoriesResolver {
 
     request.q = q.join(' ');
 
-    console.log({ date: params?.date }, Date.now(), date);
     return dataSources.GithubApi.searchRepositories(request).then(
       (response) => {
         const items = response.items.map((repository) => ({

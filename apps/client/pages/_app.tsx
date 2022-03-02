@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import './styles.css';
 import { theme } from '@trend-repositories/ui';
 import { ApolloProvider } from '@apollo/client';
-import { client } from '../lib/apollo-client';
+import { client } from '@app/lib';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (

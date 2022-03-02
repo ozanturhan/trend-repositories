@@ -24,7 +24,11 @@
       "@ui/molecules": ["libs/ui/src/components/molecules"],
       "@app/operations": ["apps/client/operations"],
       "@app/graphql": ["apps/client/graphql"],
-      "@app/lib": ["apps/client/lib"]
+      "@app/lib": ["apps/client/lib"],
+      "@bff/dataSources": ["apps/bff/src/dataSources"],
+      "@bff/typeDefs": ["apps/bff/src/typeDefs"],
+      "@bff/resolvers": ["apps/bff/src/resolvers"],
+      "@bff/utils": ["apps/bff/src/utils"]
     }
   },
   "exclude": ["node_modules", "tmp"]

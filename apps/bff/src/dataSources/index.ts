@@ -7,3 +7,5 @@ const dataSources = () => ({
 });
 
 export default dataSources;
+export * from './GithubApi'
+export * from './Language'

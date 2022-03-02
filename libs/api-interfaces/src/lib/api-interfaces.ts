@@ -1,7 +1,3 @@
-export interface Message {
-  message: string;
-}
-
 export interface GithubRepositoryRequest {
   page: number;
   per_page: number;

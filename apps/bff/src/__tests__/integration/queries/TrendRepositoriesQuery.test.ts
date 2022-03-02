@@ -1,10 +1,9 @@
 import { ApolloServer, gql } from 'apollo-server';
 
-import typeDefs from '../../../typeDefs';
-import resolvers from '../../../resolvers';
-import { GithubApi } from '../../../dataSources/GithubApi';
-import { Language } from '../../../dataSources/Language';
-import { initCache } from '../../../utils/cache';
+import typeDefs from '@bff/typeDefs';
+import resolvers from '@bff/resolvers';
+import { GithubApi, Language } from '@bff/dataSources';
+import { initCache } from '@bff/utils';
 import { languagesMock, repositoriesMock } from '../../../__mocks__';
 
 const QUERY = gql`
